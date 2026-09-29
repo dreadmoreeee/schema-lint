@@ -1,0 +1,14 @@
+schema-lint
+Copyright (c) 2026 Marvin Palencia. MIT License (see LICENSE).
+
+This package includes schema_lint/data/vocab.json, a compact index derived
+from the schema.org vocabulary
+(https://schema.org/version/latest/schemaorg-current-https.jsonld).
+Schema.org is licensed under the Creative Commons Attribution-ShareAlike 3.0
+license (https://creativecommons.org/licenses/by-sa/3.0/); see
+https://schema.org/docs/terms.html. The derived index is shared under the same
+license.
+
+schema_lint/google.py summarises Google Search Central structured-data
+documentation (https://developers.google.com/search/docs/appearance/structured-data/)
+in its own words; it is not affiliated with or endorsed by Google.

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example Tap Room</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "@id": "https://example.ca/#pub",
+  "name": "Example Tap Room",
+  "adress": "12 Water St, Exampleville",
+  "telephone": "+1-506-555-0142",
+  "url": "https://example.ca/",
+  "servesCuisine": "Pub food",
+  "priceRange": "$$",
+  "foundingDate": "Spring 2019",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Mondey", "opens": "11:00", "closes": "23:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Friday", "opens": "11:00"}
+  ],
+  "sku": "PUB-1"
+}
+</script>
+</head>
+<body>
+<nav>
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="https://example.ca/"><span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1">
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">Menu</span>
+    </li>
+  </ol>
+</nav>
+<div vocab="https://schema.org/" typeof="Event">
+  <h2 property="name">Trivia night</h2>
+  <span property="startDate">every Thursday</span>
+</div>
+</body>
+</html>

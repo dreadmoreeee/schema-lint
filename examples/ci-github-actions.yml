@@ -1,0 +1,20 @@
+# Example CI job (copy to .github/workflows/structured-data.yml in your own repo).
+# Lints the built HTML and uploads SARIF so findings show up in code scanning.
+name: structured-data
+on: [push, pull_request]
+jobs:
+  schema-lint:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install schema-lint   # or: pip install git+https://github.com/dreadmoreeee/schema-lint
+      - run: schema-lint public/ --format sarif -o schema-lint.sarif --fail-on error
+      - if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: schema-lint.sarif

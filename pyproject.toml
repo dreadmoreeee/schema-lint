@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "schema-lint"
+version = "1.0.0"
+description = "Validate JSON-LD, microdata and RDFa Lite against the real schema.org vocabulary, plus a summary of Google's rich-result requirements."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Marvin Palencia" }]
+keywords = ["schema.org", "structured data", "json-ld", "microdata", "rdfa", "seo", "lint", "sarif"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "Topic :: Internet :: WWW/HTTP :: Site Management",
+]
+dependencies = []
+
+[project.optional-dependencies]
+render = ["playwright"]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/dreadmoreeee/schema-lint"
+
+[project.scripts]
+schema-lint = "schema_lint.cli:main"
+
+[tool.setuptools]
+packages = ["schema_lint"]
+
+[tool.setuptools.package-data]
+schema_lint = ["data/vocab.json", "data/README.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
